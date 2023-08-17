@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/ataque.mp3-ae404be205b303b638b27fed76fe9df1.mp3str"
+
+[deps]
+
+source_file="res://Sonidos/SFX/ataque.mp3"
+dest_files=[ "res://.import/ataque.mp3-ae404be205b303b638b27fed76fe9df1.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

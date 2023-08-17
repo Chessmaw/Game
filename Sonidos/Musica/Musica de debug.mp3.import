@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Musica de debug.mp3-0485f3ff72dab4eaab1ca55a15f5d30f.mp3str"
+
+[deps]
+
+source_file="res://Sonidos/Musica/Musica de debug.mp3"
+dest_files=[ "res://.import/Musica de debug.mp3-0485f3ff72dab4eaab1ca55a15f5d30f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,32 +1,47 @@
 extends KinematicBody2D
 
-export (float) var speed = 300
-
-var motion = Vector2.ZERO
+export (float)var Gravity = 20
+export (float)var Speed = 150
+var Motion = Vector2()
+var UP = Vector2(0, -1)
+export (float)var jumpforce = 400
+var state_machine
+var animacion
 
 func _physics_process (delta):
-
-	if Input. is_action_pressed("ui_right"):
-		$AnimatedSprite.play("Correr derecha")
-		motion.x = speed
-		motion.y = 0
-	elif Input.is_action_pressed("ui_left"):
-		$AnimatedSprite.play("Correr izquierda")
-		motion.x =-speed
-		motion.y = 0
-	elif Input.is_action_pressed("ui_select"):
-		$AnimatedSprite.play("Salto derecha")
-		motion.y = -speed
-		motion.x = 0
-	elif Input.is_action_pressed("golpe"):
-		$AnimatedSprite.play("Ataque 1 ")	
-	else: 
-		$AnimatedSprite.play("Idle derecha")
-		motion.x = 0
-		motion.y = 0
-	move_and_slide(motion)
-	
-	motion = Vector2(motion.x, motion.y)* speed
-
-
+	animacion = $AnimationPlayer.get_current_animation()
+	$AnimationTree.set_active(true)
+	state_machine = $AnimationTree.get("parameters/playback")
+	Motion.y += Gravity
+		#Movimiento
+	if Input.is_action_pressed("ui_left"):
+		Motion.x = -Speed
+		$Sprite.flip_h = true
+		state_machine.travel('Correr_derecha')
+	elif Input.is_action_pressed("ui_right"):
+		Motion.x = Speed
+		$Sprite.flip_h = false
+		state_machine.travel('Correr_derecha')
+	else:
+		Motion.x = 0
+		state_machine.travel('Idle_derecha')
+		#Salto
+	if is_on_floor():
+		if Input.is_action_just_pressed("ui_accept"):
+			Motion.y = -jumpforce
+	else:
+		if Motion.y == 0:
+			state_machine.travel("Caer_der")
+		elif Motion.y > 0:
+			state_machine.travel("Caer_der")
+		else:
+			state_machine.travel("Salto_derecha")
+		#Ataque
+	if is_on_floor():
+		if Input.is_action_pressed("golpe"):
+			state_machine.travel('Ataque1_derecha') 
+			Motion.x = 0
+			
+			
+	Motion = move_and_slide(Motion, UP)
 	

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Salto.mp3-fe027d3f34955dba19884d221c9639e6.mp3str"
+
+[deps]
+
+source_file="res://Sonidos/SFX/Salto.mp3"
+dest_files=[ "res://.import/Salto.mp3-fe027d3f34955dba19884d221c9639e6.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

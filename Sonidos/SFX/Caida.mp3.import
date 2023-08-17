@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Caida.mp3-826aae4c3f656a2e0b27d5f9b794ad48.mp3str"
+
+[deps]
+
+source_file="res://Sonidos/SFX/Caida.mp3"
+dest_files=[ "res://.import/Caida.mp3-826aae4c3f656a2e0b27d5f9b794ad48.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

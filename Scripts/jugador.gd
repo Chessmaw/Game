@@ -3,10 +3,13 @@ extends KinematicBody2D
 export (float) var SPEED = 200  
 export (float) var GRAVITY = 800  
 export (float) var JUMP_FORCE = -400  
-
+var state_machine
 var velocity = Vector2()  
 
 func _physics_process(delta):
+	
+	state_machine = $AnimationTree.get("parameters/playback")
+	
 	var move_direction = Vector2.ZERO
 	move_direction.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	
@@ -18,3 +21,5 @@ func _physics_process(delta):
 	
 	if is_on_floor() && Input.is_action_just_pressed("ui_accept"):
 		velocity.y = JUMP_FORCE
+
+

@@ -1,15 +1,19 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://Sprites/sprite sheet definitivo de link.png" type="Texture" id=1]
-[ext_resource path="res://Scripts/jugador.gd" type="Script" id=2]
+[ext_resource path="res://playerr.gd" type="Script" id=2]
+[ext_resource path="res://Sonidos/SFX/ataque.mp3" type="AudioStream" id=3]
+[ext_resource path="res://Sonidos/SFX/Salto.mp3" type="AudioStream" id=4]
+[ext_resource path="res://Sonidos/SFX/OOT_Sword_Draw.wav" type="AudioStream" id=5]
+[ext_resource path="res://Sonidos/SFX/OOT_Sword2.wav" type="AudioStream" id=6]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 23.0
-height = 70.0
+[sub_resource type="RectangleShape2D" id=42]
+extents = Vector2( 17.5, 51 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "Ataque1_derecha"
-length = 0.6
+length = 0.4
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -17,10 +21,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 63, 64, 65, 66, 67, 68 ]
+"values": [ 63, 64, 65, 66 ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -222,6 +226,23 @@ tracks/0/keys = {
 "values": [ 28, 29, 30, 31, 32 ]
 }
 
+[sub_resource type="Animation" id=23]
+resource_name = "Caer_der"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 18, 19 ]
+}
+
 [sub_resource type="Animation" id=12]
 resource_name = "Correr_derecha"
 length = 0.8
@@ -258,7 +279,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=14]
 resource_name = "Daño_der"
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -266,10 +286,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.6, 0.7, 0.8, 0.9 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 33, 34, 35, 36, 37, 38, 39, 40, 41 ]
+"values": [ 33, 34, 35, 36, 37 ]
 }
 
 [sub_resource type="Animation" id=15]
@@ -291,6 +311,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=16]
 resource_name = "Idle_derecha"
 length = 0.5
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -298,7 +319,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"times": PoolRealArray( 0, 0.151571, 0.261, 0.350406, 0.450754 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 58, 59, 60, 61, 62 ]
@@ -370,25 +391,85 @@ tracks/0/keys = {
 "values": [ 25, 26 ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=21]
+[sub_resource type="AnimationNodeAnimation" id=24]
+animation = "Ataque1_derecha"
+
+[sub_resource type="AnimationNodeAnimation" id=25]
+animation = "Caer_der"
+
+[sub_resource type="AnimationNodeAnimation" id=26]
+animation = "Correr_derecha"
+
+[sub_resource type="AnimationNodeAnimation" id=27]
 animation = "Idle_derecha"
 
-[sub_resource type="AnimationNodeBlendTree" id=22]
-graph_offset = Vector2( 172.535, 197.783 )
-nodes/Idle_derecha/node = SubResource( 21 )
-nodes/Idle_derecha/position = Vector2( 440, 140 )
-nodes/output/position = Vector2( 320, 140 )
-node_connections = [ "output", 0, "Idle_derecha" ]
+[sub_resource type="AnimationNodeAnimation" id=28]
+animation = "Daño_der"
 
-[node name="KinematicBody2D" type="KinematicBody2D"]
-position = Vector2( 505, 298 )
+[sub_resource type="AnimationNodeAnimation" id=29]
+animation = "Salto_derecha"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=30]
+switch_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=31]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=32]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=33]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=35]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=36]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=37]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=38]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=39]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=43]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=44]
+switch_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=54]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=55]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id=40]
+states/Ataque1_derecha/node = SubResource( 24 )
+states/Ataque1_derecha/position = Vector2( 481, 6 )
+states/Caer_der/node = SubResource( 25 )
+states/Caer_der/position = Vector2( 512, 250 )
+states/Correr_derecha/node = SubResource( 26 )
+states/Correr_derecha/position = Vector2( 466, 137 )
+states/Idle_derecha/node = SubResource( 27 )
+states/Idle_derecha/position = Vector2( 206, 137 )
+states/Morir/node = SubResource( 28 )
+states/Morir/position = Vector2( 765, 137 )
+states/Salto_derecha/node = SubResource( 29 )
+states/Salto_derecha/position = Vector2( 206, 250 )
+transitions = [ "Salto_derecha", "Caer_der", SubResource( 30 ), "Idle_derecha", "Salto_derecha", SubResource( 31 ), "Idle_derecha", "Correr_derecha", SubResource( 32 ), "Idle_derecha", "Ataque1_derecha", SubResource( 33 ), "Correr_derecha", "Idle_derecha", SubResource( 35 ), "Caer_der", "Idle_derecha", SubResource( 36 ), "Ataque1_derecha", "Morir", SubResource( 37 ), "Correr_derecha", "Morir", SubResource( 38 ), "Caer_der", "Morir", SubResource( 39 ), "Ataque1_derecha", "Salto_derecha", SubResource( 43 ), "Ataque1_derecha", "Correr_derecha", SubResource( 44 ), "Ataque1_derecha", "Idle_derecha", SubResource( 54 ), "Caer_der", "Correr_derecha", SubResource( 55 ) ]
+start_node = "Idle_derecha"
+end_node = "Morir"
+graph_offset = Vector2( -114, -40 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=41]
+
+[node name="Player" type="KinematicBody2D"]
+position = Vector2( 505, 300 )
+collision_layer = 129
+collision_mask = 129
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
+Speed = 300.0
+jumpforce = 600.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+position = Vector2( 0, 6 )
+shape = SubResource( 42 )
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 2.5, 2.5 )
@@ -409,6 +490,7 @@ anims/Ataquesalto_derecha = SubResource( 8 )
 anims/Ataquesalto_izquierda = SubResource( 9 )
 anims/Aterrizaje_derecha = SubResource( 10 )
 anims/Aterrizaje_izquierda = SubResource( 11 )
+anims/Caer_der = SubResource( 23 )
 anims/Correr_derecha = SubResource( 12 )
 anims/Correr_izquierda = SubResource( 13 )
 "anims/Daño_der" = SubResource( 14 )
@@ -422,5 +504,24 @@ anims/Salto_izquierda = SubResource( 20 )
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 22 )
+tree_root = SubResource( 40 )
 anim_player = NodePath("../AnimationPlayer")
+parameters/playback = SubResource( 41 )
+
+[node name="salto" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="Daño" type="AudioStreamPlayer" parent="."]
+
+[node name="Ataquelink" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="Ataqueespada" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[node name="Muerte" type="AudioStreamPlayer" parent="."]
+
+[node name="Desenfunde" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="Caida" type="AudioStreamPlayer" parent="."]
