@@ -44,4 +44,3 @@ func _physics_process (delta):
 			
 			
 	Motion = move_and_slide(Motion, UP)
-	
