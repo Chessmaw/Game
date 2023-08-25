@@ -10,12 +10,13 @@ var canAttack : bool = true
 
 
 func _process(delta):
+	
 	move_character()
 
 func move_character():
+	$AnimationPlayer.play("Correr_izquierda")
 	velocity.y +=grabity
 	velocity.x = -speed
-
 	velocity = move_and_slide(velocity,Vector2.UP)
 
 
@@ -25,6 +26,7 @@ func _on_Area2D_body_entered(body):
 	if body.name == "Player":
 		Globalvariables.player_health -= 10
 		if Globalvariables.player_health == 0:
+			#Podemos Poner la animacion de morir aqui
 			get_tree().reload_current_scene()
 			if true:
 				Globalvariables.player_health = 100
