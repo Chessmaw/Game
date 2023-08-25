@@ -8,10 +8,6 @@ var attackDamage : int = 10
 var attackCooldown : float = 1.0
 var canAttack : bool = true
 
-func _ready():
-	#Poner animaciones exaple : 	$AnimationPlayer.play("walk")
-
-	pass # Replace with function body.
 
 func _process(delta):
 	move_character()
@@ -24,11 +20,17 @@ func move_character():
 
 
 func _on_Area2D_body_entered(body):
-	if body.get_name() == 'Player':
-		
-		print("Me mori")
-		get_tree().reload_current_scene()
-	pass # Replace with function body.
+	print("Estoy tocando")
+	print(Globalvariables.player_health)
+	if body.name == "Player":
+		Globalvariables.player_health -= 10
+		if Globalvariables.player_health == 0:
+			get_tree().reload_current_scene()
+			if true:
+				Globalvariables.player_health = 100
+				
+		#get_tree().reload_current_scene()
+	pass 
 
 
 

@@ -41,6 +41,8 @@ func _physics_process (delta):
 		if Input.is_action_pressed("golpe"):
 			state_machine.travel('Ataque1_derecha') 
 			Motion.x = 0
-			
-			
 	Motion = move_and_slide(Motion, UP)
+# Vida Test
+func _on_Area2D_body_entered(body):
+		Globalvariables.player_health = 100
+		Globalvariables.player_lives -= 1
