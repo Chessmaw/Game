@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+# Variables
 export (float)var Gravity = 20
 export (float)var Speed = 150
 var Motion = Vector2()
@@ -36,13 +37,14 @@ func _physics_process (delta):
 			state_machine.travel("Caer_der")
 		else:
 			state_machine.travel("Salto_derecha")
-		#Ataque
+	# Enemy life -1 
 	if is_on_floor():
 		if Input.is_action_pressed("golpe"):
 			state_machine.travel('Ataque1_derecha') 
-			Globalvariables.EnemyHealt -= 100 # Bajar el damange
+			Globalvariables.EnemyHealt -= 1 
 			Motion.x = 0
 	Motion = move_and_slide(Motion, UP)
+
 # Vida Test
 func _on_Area2D_body_entered(body):
 		Globalvariables.player_health = 100

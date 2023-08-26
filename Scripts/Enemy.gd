@@ -4,42 +4,43 @@ extends KinematicBody2D
 var grabity= 10
 var speed = 70
 var velocity = Vector2(0,0)
-var attackDamage : int = 10
-var attackCooldown : float = 1.0
-var canAttack : bool = true
-
+# Player Running Animation
 func _ready():
-
 	$AnimationPlayer.play("Correr_izquierda")
+	pass
+# This happenns if the enemy dies
 func _process(delta):
+	# If it reaches zero disappears
 	if Globalvariables.EnemyHealt == 0:
-		queue_free()
-	move_character()
-	
+		queue_free() # -> disappears
+	# We can put an animation of dying of the enemy
 
+	move_character()
+#Physical
 func move_character():
-	
 	velocity.y +=grabity
 	velocity.x = -speed
 	velocity = move_and_slide(velocity,Vector2.UP)
 
 
 func _on_Area2D_body_entered(body):
-	print("Estoy tocando")
-	print(Globalvariables.player_health)
 	if body.name == "Player":
-		if true:
+		# Enemy Damange
+		Globalvariables.player_health -= 25 
+		
+		# Life of the player if it changes and animation.
+		if Globalvariables.player_health <= Globalvariables.player_health:
+			print("Player Healt :" , Globalvariables.player_health)
 			$AnimationPlayer.play("Ataque1_izquierda")
-		elif false:
-			$AnimationPlayer.play("Correr_izquierda")
-		Globalvariables.player_health -= 25 # Enemy Damange
+		
+		# Player Died --> 0 
 		if Globalvariables.player_health == 0:
-			#Podemos Poner la animacion de morir aqui
+			# we can put the dead animation player here
+			print("Player Healt :0 \n","You died")
 			get_tree().reload_current_scene()
+			# Renew life --> 100 full life , If it reached zero
 			if true:
 				Globalvariables.player_health = 100
-				
-		#get_tree().reload_current_scene()
 	pass 
 
 
