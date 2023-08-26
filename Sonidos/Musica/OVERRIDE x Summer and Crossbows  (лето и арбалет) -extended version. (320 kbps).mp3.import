@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/OVERRIDE x Summer and Crossbows  (лето и арбалет) -extended version. (320 kbps).mp3-625d5301d0fb4d2ede7f9962d12cdd0d.mp3str"
+
+[deps]
+
+source_file="res://Sonidos/Musica/OVERRIDE x Summer and Crossbows  (лето и арбалет) -extended version. (320 kbps).mp3"
+dest_files=[ "res://.import/OVERRIDE x Summer and Crossbows  (лето и арбалет) -extended version. (320 kbps).mp3-625d5301d0fb4d2ede7f9962d12cdd0d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

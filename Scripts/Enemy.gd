@@ -12,7 +12,8 @@ func _ready():
 func _process(delta):
 	# If it reaches zero disappears
 	if Globalvariables.EnemyHealt == 0:
-		queue_free() # -> disappears
+		$AnimationPlayer.play("Daño_der")
+		#queue_free() # -> disappears
 	# We can put an animation of dying of the enemy
 
 	move_character()
@@ -41,8 +42,4 @@ func _on_Area2D_body_entered(body):
 			# Renew life --> 100 full life , If it reached zero
 			if true:
 				Globalvariables.player_health = 100
-	pass 
-
-
-
-	
+	pass
