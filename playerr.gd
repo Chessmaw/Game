@@ -40,6 +40,7 @@ func _physics_process (delta):
 	if is_on_floor():
 		if Input.is_action_pressed("golpe"):
 			state_machine.travel('Ataque1_derecha') 
+			Globalvariables.EnemyHealt -= 100 # Bajar el damange
 			Motion.x = 0
 	Motion = move_and_slide(Motion, UP)
 # Vida Test
