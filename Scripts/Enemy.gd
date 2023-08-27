@@ -3,12 +3,13 @@ extends KinematicBody2D
 var gravity = 10
 var speed = 50
 var velocity = Vector2(0, 0)
-
+onready var Died = $Muerte
 func _ready():
 	$AnimationPlayer.play("Correr_derecha")
 
 func _process(delta):
 	if Globalvariables.EnemyHealt == 0:
+		Died.play()
 		$AnimationPlayer.play("Daño_der")
 	elif Globalvariables.EnemyHealt <= -10:
 		Globalvariables.EnemyHealt = 100

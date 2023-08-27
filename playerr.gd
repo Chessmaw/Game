@@ -9,6 +9,10 @@ export (float)var jumpforce = 400
 var state_machine
 var animacion
 
+#Songs
+onready var Hit = $Ataquelink
+onready var Drop = $Caida
+onready var leap = $salto
 func _physics_process (delta):
 	animacion = $AnimationPlayer.get_current_animation()
 	$AnimationTree.set_active(true)
@@ -30,16 +34,16 @@ func _physics_process (delta):
 	if is_on_floor():
 		if Input.is_action_just_pressed("ui_accept"):
 			Motion.y = -jumpforce
+			leap.play()
 	else:
-		if Motion.y == 0:
-			state_machine.travel("Caer_der")
-		elif Motion.y > 0:
+		if Motion.y >= 0:
 			state_machine.travel("Caer_der")
 		else:
 			state_machine.travel("Salto_derecha")
 	# Enemy life -1 
 	if is_on_floor():
 		if Input.is_action_pressed("golpe"):
+			Hit.play()
 			state_machine.travel('Ataque1_derecha') 
 			Globalvariables.EnemyHealt -= 1 
 			Motion.x = 0
