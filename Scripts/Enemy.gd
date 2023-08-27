@@ -1,53 +1,43 @@
 extends KinematicBody2D
 
+var gravity = 10
+var speed = 50
+var velocity = Vector2(0, 0)
 
-var grabity= 10
-var speed = 70
-var velocity = Vector2(0,0)
-# Player Running Animation
 func _ready():
 	$AnimationPlayer.play("Correr_derecha")
-	pass
-# This happenns if the enemy dies
+
 func _process(delta):
-	# If it reaches zero disappears
 	if Globalvariables.EnemyHealt == 0:
 		$AnimationPlayer.play("Daño_der")
 	elif Globalvariables.EnemyHealt <= -10:
 		Globalvariables.EnemyHealt = 100
 		queue_free()
 	elif Globalvariables.EnemyHealt > 1:
-		velocity.y +=grabity
-		velocity.x = -speed
-		velocity = move_and_slide(velocity,Vector2.UP)
-		pass
-		#queue_free() # -> disappears
-	# We can put an animation of dying of the enemy
+		velocity.y += gravity
+		velocity = move_and_slide(velocity, Vector2.UP)
 
 	move_character()
-#Physical
-func move_character():
-	pass
 
+func move_character():
+	velocity.x = -speed
+	velocity = move_and_slide(velocity, Vector2.UP)
 
 func _on_Area2D_body_entered(body):
+	if body.name == "Colision":
+		scale.x = -scale.x
+		speed = -speed
+		$AnimationPlayer.play("Correr_derecha")
 
 	if body.name == "Player":
-		# Enemy Damange
 		Globalvariables.EnemyHealt -= 11
-		Globalvariables.player_health -= 25 
-		if true:
-			$AnimationPlayer.play("Ataque1_derecha")
-		# Life of the player if it changes and animation.
-		if Globalvariables.player_health <= Globalvariables.player_health:
-			print("Player Healt :" , Globalvariables.player_health)
-		
-		# Player Died --> 0 
-		if Globalvariables.player_health == 0:
-			# we can put the dead animation player here
-			print("Player Healt :0 \n","You died")
+		Globalvariables.player_health -= 25
+		$AnimationPlayer.play("Ataque1_derecha")
+
+		if Globalvariables.player_health <= 0:
+			print("Player Health:0 \n", "You died")
+			Globalvariables.player_health = 100
+			Globalvariables.EnemyHealt = 100
 			get_tree().reload_current_scene()
-			# Renew life --> 100 full life , If it reached zero
-			if true:
-				Globalvariables.player_health = 100
-	pass
+
+		print("Player Health:", Globalvariables.player_health)

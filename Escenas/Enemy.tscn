@@ -462,7 +462,7 @@ graph_offset = Vector2( -114, -40 )
 [sub_resource type="RectangleShape2D" id=56]
 extents = Vector2( 36.5, 69.5 )
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Enemy" type="KinematicBody2D"]
 position = Vector2( 505, 300 )
 scale = Vector2( -1.04, 1 )
 collision_layer = 133
