@@ -10,8 +10,8 @@ config_version=4
 
 [application]
 
-config/name="Game"
-run/main_scene="res://Escenas/escena de prueba.tscn"
+config/name="S.A.S: Avil"
+run/main_scene="res://Escenas/Intro.tscn"
 boot_splash/image="res://fONDO DE inicio.PNG"
 config/icon="res://icon.png"
 
