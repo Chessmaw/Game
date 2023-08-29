@@ -537,7 +537,7 @@ scale = Vector2( 1, 1 )
 shape = SubResource( 17 )
 
 [node name="Actor1" type="KinematicBody2D" parent="."]
-position = Vector2( 49, 483 )
+position = Vector2( -133, 484 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
@@ -547,7 +547,7 @@ __meta__ = {
 position = Vector2( -8, 0 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 9 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actor1"]
