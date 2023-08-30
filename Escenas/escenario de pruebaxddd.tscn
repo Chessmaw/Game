@@ -30,7 +30,7 @@ radius = 143.837
 
 [sub_resource type="SegmentShape2D" id=8]
 a = Vector2( 395, 245 )
-b = Vector2( 1068, 249 )
+b = Vector2( 1068, 244 )
 
 [node name="escenario de pruebaxddd" type="Node2D"]
 

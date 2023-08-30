@@ -12,8 +12,9 @@ var state_machine_pistola
 #Songs
 
 func _physics_process (delta):
-	state_machine_pistola = $animatreepistola.get("parameters/playback")
-	$animatreepistola.set_active(true)
+	
+	state_machine_pistola = $AmogusSpritesheet2/Pistolaamogus/animatreepistola.get("parameters/playback")
+	$AmogusSpritesheet2/Pistolaamogus/animatreepistola.set_active(true)
 	animacion = $AnimationPlayer.get_current_animation()
 	$AnimationTree.set_active(true)
 	state_machine = $AnimationTree.get("parameters/playback")
@@ -38,22 +39,30 @@ func _physics_process (delta):
 	else:
 		if Motion.y >= 0:
 			state_machine.travel("Caer")
+			
 		else:
 			state_machine.travel("saltar")
+	if $AmogusSpritesheet2/Pistolaamogus/animparapsitola.play("Disparar")==false:
+		state_machine_pistola.travel("idlepistolon")
 	# Enemy life -1 
 	if is_on_floor():
-		if $Pistolaamogusdesenfunde.show() == (true):
-			if Input.is_action_pressed("desenfunde"):
-				$Pistolaamogusdesenfunde.show()
-				$desenfunde.play('Sacarsela')
-				if Input.is_action_pressed("Disparar"):
-					$Pistolaamogus.show()
-					$animparapsitola.play("disparar")
-			else:
-				$desenfunde.play_backwards('Sacarsela')
+		if Input.is_action_pressed("desenfunde"):
+			$AmogusSpritesheet2/Pistolaamogus.show()
+			state_machine_pistola.travel("sacarsela")
+			
+	if is_on_floor():
+		if Input.is_action_pressed("Disparar"):
+			state_machine_pistola.travel("Disparar")
+
 	Motion = move_and_slide(Motion, UP)
 
 # Vida Test
 func _on_Area2D_body_entered(body):
 		Globalvariables.player_health = 100
 		Globalvariables.player_lives -= 1
+
+
+func _on_animparapsitola_animation_finished(sacarsela):
+	pass
+
+

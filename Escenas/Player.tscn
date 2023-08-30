@@ -456,7 +456,7 @@ states/Salto_derecha/position = Vector2( 206, 250 )
 transitions = [ "Salto_derecha", "Caer_der", SubResource( 30 ), "Idle_derecha", "Salto_derecha", SubResource( 31 ), "Idle_derecha", "Correr_derecha", SubResource( 32 ), "Idle_derecha", "Ataque1_derecha", SubResource( 33 ), "Correr_derecha", "Idle_derecha", SubResource( 35 ), "Caer_der", "Idle_derecha", SubResource( 36 ), "Ataque1_derecha", "Morir", SubResource( 37 ), "Correr_derecha", "Morir", SubResource( 38 ), "Caer_der", "Morir", SubResource( 39 ), "Ataque1_derecha", "Salto_derecha", SubResource( 43 ), "Ataque1_derecha", "Correr_derecha", SubResource( 44 ), "Ataque1_derecha", "Idle_derecha", SubResource( 54 ), "Caer_der", "Correr_derecha", SubResource( 55 ) ]
 start_node = "Idle_derecha"
 end_node = "Morir"
-graph_offset = Vector2( -39, 97 )
+graph_offset = Vector2( -34, 84 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=41]
 
