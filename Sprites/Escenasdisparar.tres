@@ -3,6 +3,7 @@
 [resource]
 resource_name = "idlepistolon"
 length = 0.2
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1

@@ -14,6 +14,7 @@ func _on_Area2D_area_entered(area):
 	$"../AnimationPlayer".play("Disolve")
 	$"../ColorRect".show()
 	
+	
 func _on_Linkintro22_animation_finished():
 	$"../AnimatedSprite".show()
 	$"../Trifuerza2".show()
@@ -33,6 +34,11 @@ func _on_lkesgo_animation_finished(dejar):
 func _on_el_del_titulo_animation_finished(anim_name):
 	$"../Button".show()
 	$"../delboton".play("aparecer")
+	$"../Label".show()
 
 func _on_delboton_animation_finished(aparecer):
 	$"../delboton".play("rgb")
+
+
+func _on_area_de_los_pasos_area_entered(area):
+	$AudioStreamPlayer.play()

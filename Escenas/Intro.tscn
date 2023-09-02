@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://Sprites/Link_intro2.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/trifuerzagif.png" type="Texture" id=2]
@@ -8,7 +8,8 @@
 [ext_resource path="res://Fuentes/KGBlankSpaceSolid.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://Sonidos/Musica/intro musica.mp3" type="AudioStream" id=7]
 [ext_resource path="res://Fuentes/MinecraftRegular-Bmg3.otf" type="DynamicFontData" id=8]
-[ext_resource path="res://Escenas/botondeempezar.gd" type="Script" id=9]
+[ext_resource path="res://Escenas/Botton.gd" type="Script" id=9]
+[ext_resource path="res://Sonidos/SFX/Untitled_Project_V1.mp3" type="AudioStream" id=10]
 
 [sub_resource type="RectangleShape2D" id=17]
 extents = Vector2( 73, 136.875 )
@@ -376,45 +377,15 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0.494118 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="DynamicFont" id=36]
-size = 40
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 8 )
-
-[sub_resource type="StyleBoxFlat" id=37]
-bg_color = Color( 0.976471, 0.976471, 0.976471, 1 )
-
-[sub_resource type="StyleBoxFlat" id=38]
-bg_color = Color( 0.847059, 0.890196, 0.0862745, 0 )
-border_color = Color( 0.27451, 0.25098, 0.25098, 1 )
-corner_detail = 1
-
-[sub_resource type="StyleBoxFlat" id=39]
-bg_color = Color( 1, 0, 0, 0 )
-shadow_color = Color( 0.0901961, 0.054902, 0.317647, 0.6 )
-
 [sub_resource type="Animation" id=40]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:custom_styles/normal:bg_color")
+tracks/0/path = NodePath(".:custom_styles/pressed:bg_color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
-tracks/0/enabled = false
+tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 0, 0, 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath(".:custom_styles/pressed:bg_color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = false
-tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -424,24 +395,12 @@ tracks/1/keys = {
 [sub_resource type="Animation" id=42]
 resource_name = "aparecer"
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:custom_styles/pressed:bg_color")
+tracks/0/path = NodePath(".:custom_styles/normal:bg_color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
-tracks/0/enabled = false
+tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 0.847059, 0.890196, 0.0862745, 0 ), Color( 0.890196, 0.0862745, 0.0862745, 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath(".:custom_styles/normal:bg_color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
@@ -450,7 +409,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=41]
 resource_name = "rgb"
-length = 7.0
+length = 5.0
 loop = true
 step = 1.0
 tracks/0/type = "value"
@@ -460,10 +419,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1, 2, 3, 4, 5, 6, 7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.247895, 0.448517, 0.601867, 0.841691, 1.04923, 1.25101, 1.45048, 1.64879, 1.79983, 2.00046, 2.19762, 2.44897, 2.64844, 2.84907, 3.04969, 3.45785, 3.79683, 4.00553, 4.45289 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 0, 0, 1 ), Color( 1, 0.654902, 0, 1 ), Color( 0.337255, 1, 0.00392157, 1 ), Color( 0.00392157, 1, 0.905882, 1 ), Color( 0.00392157, 0.0431373, 1, 1 ), Color( 0.713726, 0.00392157, 1, 1 ), Color( 1, 0.00392157, 0.705882, 1 ), Color( 1, 0.00392157, 0.00392157, 1 ) ]
+"values": [ Color( 1, 0, 0, 1 ), Color( 1, 0.560784, 0, 1 ), Color( 0.803922, 1, 0, 1 ), Color( 0.329412, 0.976471, 0, 1 ), Color( 0, 0.941176, 0.545098, 1 ), Color( 0.0352941, 0.807843, 0.909804, 1 ), Color( 0.0666667, 0.309804, 0.878431, 1 ), Color( 0.298039, 0.0980392, 0.847059, 1 ), Color( 0.643137, 0.0941176, 0.815686, 1 ), Color( 0.792157, 0.0901961, 0.666667, 1 ), Color( 1, 0.0117647, 0.427451, 1 ), Color( 1, 0.0117647, 0.0117647, 1 ), Color( 1, 0.498039, 0.0117647, 1 ), Color( 1, 0.937255, 0.0117647, 1 ), Color( 0.133333, 1, 0.0117647, 1 ), Color( 0.0117647, 0.952941, 0.862745, 1 ), Color( 0.113725, 0.262745, 0.854902, 1 ), Color( 0.647059, 0.2, 0.772549, 1 ), Color( 0.901961, 0, 1, 1 ), Color( 0.917647, 0, 0, 1 ) ]
 }
 
 [sub_resource type="Animation" id=44]
@@ -520,7 +479,24 @@ tracks/1/keys = {
 "values": [ -21.19, 1.0 ]
 }
 
+[sub_resource type="DynamicFont" id=46]
+size = 42
+font_data = ExtResource( 8 )
+
+[sub_resource type="StyleBoxFlat" id=47]
+bg_color = Color( 0.0431373, 0.0431373, 0.0431373, 0.615686 )
+
+[sub_resource type="StyleBoxFlat" id=48]
+bg_color = Color( 0.847059, 0.890196, 0.0862745, 0 )
+
+[sub_resource type="StyleBoxFlat" id=49]
+bg_color = Color( 0.949075, 0.674856, 0, 1 )
+
 [node name="Intro" type="Node2D"]
+__meta__ = {
+"_edit_horizontal_guides_": [ 80.0 ],
+"_edit_vertical_guides_": [ 500.0 ]
+}
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 show_behind_parent = true
@@ -546,6 +522,7 @@ __meta__ = {
 position = Vector2( -8, 0 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 9 )
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actor1"]
@@ -558,8 +535,12 @@ shape = SubResource( 10 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actor1/Area2D"]
 shape = SubResource( 18 )
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Actor1"]
+stream = ExtResource( 10 )
+volume_db = 1.0
+
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2( 513, 501 )
+position = Vector2( 499, 501 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -576,7 +557,7 @@ playing = true
 
 [node name="Trifuerza2" type="AnimatedSprite" parent="."]
 visible = false
-position = Vector2( 513, 387 )
+position = Vector2( 500, 387 )
 scale = Vector2( 1.40625, 1.6875 )
 frames = SubResource( 16 )
 frame = 1
@@ -584,16 +565,15 @@ playing = true
 
 [node name="Linkintro22" type="AnimatedSprite" parent="."]
 visible = false
-position = Vector2( 510, 478 )
+position = Vector2( 493, 478 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 22 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 visible = false
-position = Vector2( 510, 477 )
+position = Vector2( 495, 477 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 25 )
-frame = 1
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -614,10 +594,13 @@ visible = false
 margin_left = 188.0
 margin_top = 214.0
 margin_right = 838.0
-margin_bottom = 297.0
+margin_bottom = 311.0
 rect_pivot_offset = Vector2( 323.446, 42.2975 )
 custom_fonts/font = SubResource( 28 )
-text = "*Inserte Titulo Xd*"
+text = "Blue Label 
+
+
+"
 align = 1
 
 [node name="el del titulo" type="AnimationPlayer" parent="."]
@@ -642,19 +625,6 @@ anims/ayyda = SubResource( 35 )
 stream = ExtResource( 7 )
 volume_db = -21.19
 
-[node name="Button" type="Button" parent="."]
-visible = false
-margin_left = 395.0
-margin_top = 161.0
-margin_right = 623.0
-margin_bottom = 231.0
-custom_fonts/font = SubResource( 36 )
-custom_styles/hover = SubResource( 37 )
-custom_styles/pressed = SubResource( 38 )
-custom_styles/normal = SubResource( 39 )
-text = "Jugar"
-script = ExtResource( 9 )
-
 [node name="delboton" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Button")
 anims/RESET = SubResource( 40 )
@@ -666,10 +636,35 @@ root_node = NodePath("../AudioStreamPlayer")
 anims/RESET = SubResource( 44 )
 anims/asdf = SubResource( 45 )
 
+[node name="Label" type="Label" parent="."]
+visible = false
+margin_left = 4.0
+margin_top = 533.0
+margin_right = 302.0
+margin_bottom = 615.0
+rect_scale = Vector2( 0.5, 0.5 )
+text = "*Al clickear en \"jugar\" estas aceptando que todos tus datos personales de este dispositivo sean usados, asi como cualquier dato bancario que se pueda encontrar en tu navegador"
+align = 3
+valign = 3
+autowrap = true
+
+[node name="Button" type="Button" parent="."]
+visible = false
+margin_left = 404.0
+margin_top = 170.0
+margin_right = 597.0
+margin_bottom = 239.0
+custom_fonts/font = SubResource( 46 )
+custom_styles/hover = SubResource( 47 )
+custom_styles/pressed = SubResource( 48 )
+custom_styles/normal = SubResource( 49 )
+text = "Jugar"
+script = ExtResource( 9 )
+
 [connection signal="area_entered" from="Actor1/Area2D" to="Actor1" method="_on_Area2D_area_entered"]
 [connection signal="animation_finished" from="Linkintro22" to="Actor1" method="_on_Linkintro22_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="Actor1" method="_on_AnimationPlayer_animation_finished"]
 [connection signal="animation_finished" from="el del titulo" to="Actor1" method="_on_el_del_titulo_animation_finished"]
 [connection signal="animation_finished" from="lkesgo" to="Actor1" method="_on_lkesgo_animation_finished"]
-[connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]
 [connection signal="animation_finished" from="delboton" to="Actor1" method="_on_delboton_animation_finished"]
+[connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]

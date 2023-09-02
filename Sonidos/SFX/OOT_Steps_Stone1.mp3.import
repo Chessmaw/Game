@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/OOT_Steps_Stone1.mp3-073bd14223d8b4e247cb8b749e16fac1.mp3str"
+
+[deps]
+
+source_file="res://Sonidos/SFX/OOT_Steps_Stone1.mp3"
+dest_files=[ "res://.import/OOT_Steps_Stone1.mp3-073bd14223d8b4e247cb8b749e16fac1.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

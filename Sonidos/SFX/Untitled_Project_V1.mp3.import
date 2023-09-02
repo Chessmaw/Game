@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Untitled_Project_V1.mp3-5c4233eae8f9a8402cf0d4084f7d119e.mp3str"
+
+[deps]
+
+source_file="res://Sonidos/SFX/Untitled_Project_V1.mp3"
+dest_files=[ "res://.import/Untitled_Project_V1.mp3-5c4233eae8f9a8402cf0d4084f7d119e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

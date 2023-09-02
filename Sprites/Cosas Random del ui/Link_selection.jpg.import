@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Controles_tutorial.png-6cd327dcd552274e5b8bf8abb6c1bc33.stex"
+path="res://.import/Link_selection.jpg-b1d0b4e2dfe9a275f09fac85982c699e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Controles_tutorial.png"
-dest_files=[ "res://.import/Controles_tutorial.png-6cd327dcd552274e5b8bf8abb6c1bc33.stex" ]
+source_file="res://Sprites/Cosas Random del ui/Link_selection.jpg"
+dest_files=[ "res://.import/Link_selection.jpg-b1d0b4e2dfe9a275f09fac85982c699e.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

@@ -73,6 +73,7 @@ switch_mode = 2
 [sub_resource type="AnimationNodeStateMachineTransition" id=46]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=47]
+switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=48]
 
@@ -91,7 +92,8 @@ states/sacarsela/node = SubResource( 38 )
 states/sacarsela/position = Vector2( 215, 121 )
 transitions = [ "sacarsela", "idlepistolon", SubResource( 40 ), "idlepistolon", "sacarsela", SubResource( 41 ), "idlepistolon", "Disparar", SubResource( 46 ), "Disparar", "idlepistolon", SubResource( 47 ), "sacarsela", "enfundarla", SubResource( 48 ), "Disparar", "enfundarla", SubResource( 49 ), "idlepistolon", "enfundarla", SubResource( 50 ) ]
 start_node = "idlepistolon"
-graph_offset = Vector2( -154, -35 )
+end_node = "enfundarla"
+graph_offset = Vector2( -149, -49 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=29]
 
@@ -260,8 +262,8 @@ vframes = 4
 
 [node name="Pistolaamogus" type="Sprite" parent="AmogusSpritesheet2"]
 visible = false
-position = Vector2( 11, 1 )
 texture = ExtResource( 2 )
+offset = Vector2( 11, 0 )
 hframes = 2
 vframes = 2
 frame = 2

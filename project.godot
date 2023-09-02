@@ -18,6 +18,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Ui="*res://Escenas/UI.tscn"
+Transicion="res://Escenas/Transicion.tscn"
 Globalvariables="*res://globalvariables.gd"
 
 [display]

@@ -1,0 +1,291 @@
+[gd_scene load_steps=51 format=2]
+
+[ext_resource path="res://Fuentes/KGBlankSpaceSolid.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Sprites/Cosas Random del ui/Link_seleccion_animado1.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Cosas Random del ui/Link_seleccion_animado3.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Cosas Random del ui/Link_seleccion_animado2.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Cosas Random del ui/Link_selection.jpg" type="Texture" id=5]
+[ext_resource path="res://Sprites/Cosas Random del ui/Link_seleccion_animado6.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Cosas Random del ui/Link_seleccion_animado4.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Cosas Random del ui/Link_seleccion_animado5.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Cosas Random del ui/seleccionamongus.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Cosas Random del ui/1456896_mugenelsalvador_there-is-1-impostor-among-us.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Cosas Random del ui/Animated_fire_.png" type="Texture" id=11]
+[ext_resource path="res://Seleccion de pjs.gd" type="Script" id=12]
+[ext_resource path="res://Fuentes/MinecraftRegular-Bmg3.otf" type="DynamicFontData" id=13]
+[ext_resource path="res://Fuentes/Qdbettercomicsans-jEEeG.ttf" type="DynamicFontData" id=14]
+[ext_resource path="res://Scripts/boton_amongus.gd" type="Script" id=15]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 480, 359 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 480, 0, 480, 359 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 960, 0, 480, 359 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 1440, 0, 480, 359 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 1920, 0, 480, 359 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 2400, 0, 480, 359 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 2880, 0, 480, 359 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 3360, 0, 480, 359 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 0, 359, 480, 359 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 480, 359, 480, 359 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 960, 359, 480, 359 )
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 1440, 359, 480, 359 )
+
+[sub_resource type="AtlasTexture" id=13]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 1920, 359, 480, 359 )
+
+[sub_resource type="AtlasTexture" id=14]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 2400, 359, 480, 359 )
+
+[sub_resource type="AtlasTexture" id=15]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 2880, 359, 480, 359 )
+
+[sub_resource type="AtlasTexture" id=16]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 3360, 359, 480, 359 )
+
+[sub_resource type="AtlasTexture" id=17]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 0, 718, 480, 359 )
+
+[sub_resource type="AtlasTexture" id=18]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 480, 718, 480, 359 )
+
+[sub_resource type="AtlasTexture" id=19]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 960, 718, 480, 359 )
+
+[sub_resource type="AtlasTexture" id=20]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 1440, 718, 480, 359 )
+
+[sub_resource type="AtlasTexture" id=21]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 1920, 718, 480, 359 )
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 2400, 718, 480, 359 )
+
+[sub_resource type="AtlasTexture" id=23]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 2880, 718, 480, 359 )
+
+[sub_resource type="AtlasTexture" id=24]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 3360, 718, 480, 359 )
+
+[sub_resource type="SpriteFrames" id=25]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
+"loop": true,
+"name": "default",
+"speed": 30.0
+} ]
+
+[sub_resource type="DynamicFont" id=26]
+size = 43
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxTexture" id=27]
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 1920, 1080 )
+modulate_color = Color( 0.576471, 0.572549, 0.572549, 1 )
+
+[sub_resource type="StyleBoxTexture" id=28]
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 1920, 1080 )
+modulate_color = Color( 0.380392, 0.380392, 0.380392, 1 )
+
+[sub_resource type="StyleBoxTexture" id=29]
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 1920, 1080 )
+
+[sub_resource type="StyleBoxTexture" id=31]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 1364, 1705 )
+modulate_color = Color( 0.635294, 0.635294, 0.635294, 1 )
+
+[sub_resource type="StyleBoxTexture" id=32]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 1364, 1705 )
+modulate_color = Color( 0.294118, 0.294118, 0.294118, 1 )
+
+[sub_resource type="StyleBoxTexture" id=33]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 1364, 1705 )
+
+[sub_resource type="AnimatedTexture" id=30]
+frames = 6
+fps = 10.0
+frame_0/texture = ExtResource( 2 )
+frame_1/texture = ExtResource( 4 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 3 )
+frame_2/delay_sec = 0.0
+frame_3/texture = ExtResource( 7 )
+frame_3/delay_sec = 0.0
+frame_4/texture = ExtResource( 8 )
+frame_4/delay_sec = 0.0
+frame_5/texture = ExtResource( 6 )
+frame_5/delay_sec = 0.0
+
+[sub_resource type="DynamicFont" id=34]
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=35]
+size = 31
+outline_size = 2
+font_data = ExtResource( 13 )
+
+[node name="seleccion de pjs" type="Node2D"]
+script = ExtResource( 12 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 511.5, 300.5 )
+scale = Vector2( 2.21458, 1.75209 )
+frames = SubResource( 25 )
+frame = 15
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_left = 203.0
+margin_top = 48.0
+margin_right = 804.0
+margin_bottom = 88.0
+color = Color( 0.207843, 0.2, 0.2, 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 198.0
+margin_top = 43.0
+margin_right = 799.0
+margin_bottom = 83.0
+color = Color( 0.0117647, 0.0117647, 0.0117647, 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 229.0
+margin_top = 32.0
+margin_right = 792.0
+margin_bottom = 90.0
+custom_fonts/font = SubResource( 26 )
+text = "Seleciona tu Personaje"
+
+[node name="Button" type="Button" parent="."]
+margin_left = 162.0
+margin_top = 240.0
+margin_right = 416.0
+margin_bottom = 540.0
+custom_styles/hover = SubResource( 27 )
+custom_styles/pressed = SubResource( 28 )
+custom_styles/normal = SubResource( 29 )
+icon = ExtResource( 9 )
+icon_align = 1
+expand_icon = true
+script = ExtResource( 15 )
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 571.0
+margin_top = 239.0
+margin_right = 825.0
+margin_bottom = 539.0
+custom_styles/hover = SubResource( 31 )
+custom_styles/pressed = SubResource( 32 )
+custom_styles/normal = SubResource( 33 )
+icon = SubResource( 30 )
+icon_align = 1
+expand_icon = true
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 2.0
+margin_top = 472.0
+margin_right = 117.0
+margin_bottom = 750.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 34 )
+text = "*Nota: No encontre una mejor imagen pal link y el fondo es improvisado xd"
+align = 1
+autowrap = true
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 217.0
+margin_top = 207.0
+margin_right = 362.0
+margin_bottom = 239.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 35 )
+text = "Amongus "
+
+[node name="Label4" type="Label" parent="."]
+margin_left = 669.0
+margin_top = 207.0
+margin_right = 729.0
+margin_bottom = 239.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 35 )
+text = "Link"
+
+[connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]
