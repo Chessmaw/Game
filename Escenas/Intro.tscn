@@ -522,7 +522,7 @@ __meta__ = {
 position = Vector2( -8, 0 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 9 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actor1"]
@@ -552,15 +552,14 @@ shape = SubResource( 11 )
 [node name="Trifuerza" type="AnimatedSprite" parent="Area2D"]
 scale = Vector2( 1.40625, 1.6875 )
 frames = SubResource( 16 )
-frame = 2
 playing = true
 
 [node name="Trifuerza2" type="AnimatedSprite" parent="."]
 visible = false
-position = Vector2( 500, 387 )
+position = Vector2( 499, 387 )
 scale = Vector2( 1.40625, 1.6875 )
 frames = SubResource( 16 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="Linkintro22" type="AnimatedSprite" parent="."]
@@ -574,6 +573,7 @@ visible = false
 position = Vector2( 495, 477 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 25 )
+frame = 1
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -649,11 +649,10 @@ valign = 3
 autowrap = true
 
 [node name="Button" type="Button" parent="."]
-visible = false
-margin_left = 404.0
+margin_left = 395.0
 margin_top = 170.0
-margin_right = 597.0
-margin_bottom = 239.0
+margin_right = 606.0
+margin_bottom = 252.0
 custom_fonts/font = SubResource( 46 )
 custom_styles/hover = SubResource( 47 )
 custom_styles/pressed = SubResource( 48 )

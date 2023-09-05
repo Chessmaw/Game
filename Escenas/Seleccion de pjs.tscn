@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://Fuentes/KGBlankSpaceSolid.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Sprites/Cosas Random del ui/Link_seleccion_animado1.png" type="Texture" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Fuentes/MinecraftRegular-Bmg3.otf" type="DynamicFontData" id=13]
 [ext_resource path="res://Fuentes/Qdbettercomicsans-jEEeG.ttf" type="DynamicFontData" id=14]
 [ext_resource path="res://Scripts/boton_amongus.gd" type="Script" id=15]
+[ext_resource path="res://Sonidos/Musica/Intro para goku.mp3" type="AudioStream" id=16]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -287,5 +288,8 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 35 )
 text = "Link"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
 
 [connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]
