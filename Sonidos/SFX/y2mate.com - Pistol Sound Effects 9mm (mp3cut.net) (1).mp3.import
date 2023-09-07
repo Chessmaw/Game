@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/y2mate.com - Pistol Sound Effects 9mm (mp3cut.net) (1).mp3-f66bcdf1ed9890ae088f53ba2cbd74ce.mp3str"
+
+[deps]
+
+source_file="res://Sonidos/SFX/y2mate.com - Pistol Sound Effects 9mm (mp3cut.net) (1).mp3"
+dest_files=[ "res://.import/y2mate.com - Pistol Sound Effects 9mm (mp3cut.net) (1).mp3-f66bcdf1ed9890ae088f53ba2cbd74ce.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

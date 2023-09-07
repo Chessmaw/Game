@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/audio cagado xddddddddddddddddd.mp3-dc07f9d2b4273f209cb9a76255765177.mp3str"
+
+[deps]
+
+source_file="res://Sonidos/Musica/audio cagado xddddddddddddddddd.mp3"
+dest_files=[ "res://.import/audio cagado xddddddddddddddddd.mp3-dc07f9d2b4273f209cb9a76255765177.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

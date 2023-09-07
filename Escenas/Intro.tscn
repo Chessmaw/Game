@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=64 format=2]
 
 [ext_resource path="res://Sprites/Link_intro2.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/trifuerzagif.png" type="Texture" id=2]
@@ -8,35 +8,104 @@
 [ext_resource path="res://Fuentes/KGBlankSpaceSolid.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://Sonidos/Musica/intro musica.mp3" type="AudioStream" id=7]
 [ext_resource path="res://Fuentes/MinecraftRegular-Bmg3.otf" type="DynamicFontData" id=8]
-[ext_resource path="res://Escenas/Botton.gd" type="Script" id=9]
+[ext_resource path="res://Scripts/Botton.gd" type="Script" id=9]
 [ext_resource path="res://Sonidos/SFX/Untitled_Project_V1.mp3" type="AudioStream" id=10]
+[ext_resource path="res://Fuentes/RGB boton.tres" type="Animation" id=11]
+[ext_resource path="res://Escenas/startbuttonasdfarsdfgbsf.gd" type="Script" id=12]
 
 [sub_resource type="RectangleShape2D" id=17]
 extents = Vector2( 73, 136.875 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="Animation" id=50]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AudioStreamPlayer:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=51]
+resource_name = "camiar"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AudioStreamPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false ]
+}
+
+[sub_resource type="AtlasTexture" id=52]
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 48, 64 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=53]
 atlas = ExtResource( 3 )
 region = Rect2( 48, 0, 48, 64 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=54]
 atlas = ExtResource( 3 )
 region = Rect2( 96, 0, 48, 64 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=55]
 atlas = ExtResource( 3 )
 region = Rect2( 144, 0, 48, 64 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=56]
 atlas = ExtResource( 3 )
 region = Rect2( 192, 0, 48, 64 )
 
 [sub_resource type="SpriteFrames" id=9]
 animations = [ {
-"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"frames": [ SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -391,6 +460,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Color( 0.847059, 0.890196, 0.0862745, 0 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:custom_styles/normal:bg_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.878431, 0.0117647, 0.0117647, 1 ) ]
+}
 
 [sub_resource type="Animation" id=42]
 resource_name = "aparecer"
@@ -407,11 +488,9 @@ tracks/0/keys = {
 "values": [ Color( 1, 0, 0, 0 ), Color( 1, 0, 0, 1 ) ]
 }
 
-[sub_resource type="Animation" id=41]
-resource_name = "rgb"
+[sub_resource type="Animation" id=61]
+resource_name = "rgdsc"
 length = 5.0
-loop = true
-step = 1.0
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:custom_styles/normal:bg_color")
 tracks/0/interp = 1
@@ -419,10 +498,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.247895, 0.448517, 0.601867, 0.841691, 1.04923, 1.25101, 1.45048, 1.64879, 1.79983, 2.00046, 2.19762, 2.44897, 2.64844, 2.84907, 3.04969, 3.45785, 3.79683, 4.00553, 4.45289 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.61378, 1.4833, 2.19207, 2.77662, 3.50731, 4.28915, 4.93947 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 0, 0, 1 ), Color( 1, 0.560784, 0, 1 ), Color( 0.803922, 1, 0, 1 ), Color( 0.329412, 0.976471, 0, 1 ), Color( 0, 0.941176, 0.545098, 1 ), Color( 0.0352941, 0.807843, 0.909804, 1 ), Color( 0.0666667, 0.309804, 0.878431, 1 ), Color( 0.298039, 0.0980392, 0.847059, 1 ), Color( 0.643137, 0.0941176, 0.815686, 1 ), Color( 0.792157, 0.0901961, 0.666667, 1 ), Color( 1, 0.0117647, 0.427451, 1 ), Color( 1, 0.0117647, 0.0117647, 1 ), Color( 1, 0.498039, 0.0117647, 1 ), Color( 1, 0.937255, 0.0117647, 1 ), Color( 0.133333, 1, 0.0117647, 1 ), Color( 0.0117647, 0.952941, 0.862745, 1 ), Color( 0.113725, 0.262745, 0.854902, 1 ), Color( 0.647059, 0.2, 0.772549, 1 ), Color( 0.901961, 0, 1, 1 ), Color( 0.917647, 0, 0, 1 ) ]
+"values": [ Color( 0.878431, 0.0117647, 0.0117647, 1 ), Color( 0.0627451, 0.0117647, 0.878431, 1 ), Color( 0.219608, 0.878431, 0.0117647, 1 ), Color( 0.878431, 0.0117647, 0.741176, 1 ), Color( 0.0117647, 0.878431, 0.760784, 1 ), Color( 0.807843, 0.878431, 0.0117647, 1 ), Color( 0.407843, 0.0117647, 0.878431, 1 ), Color( 0.878431, 0.0117647, 0.0117647, 1 ) ]
 }
 
 [sub_resource type="Animation" id=44]
@@ -490,7 +569,79 @@ bg_color = Color( 0.0431373, 0.0431373, 0.0431373, 0.615686 )
 bg_color = Color( 0.847059, 0.890196, 0.0862745, 0 )
 
 [sub_resource type="StyleBoxFlat" id=49]
-bg_color = Color( 0.949075, 0.674856, 0, 1 )
+bg_color = Color( 0.878431, 0.0117647, 0.0117647, 1 )
+
+[sub_resource type="DynamicFont" id=65]
+size = 30
+font_data = ExtResource( 8 )
+
+[sub_resource type="StyleBoxFlat" id=62]
+bg_color = Color( 0.533333, 0.533333, 0.533333, 0.588235 )
+
+[sub_resource type="StyleBoxFlat" id=63]
+bg_color = Color( 1, 1, 1, 1 )
+border_color = Color( 1, 1, 0, 0 )
+
+[sub_resource type="StyleBoxFlat" id=64]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="Animation" id=57]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:custom_styles/pressed:border_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:custom_styles/normal:bg_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.6, 0.6, 0.6, 0 ) ]
+}
+
+[sub_resource type="Animation" id=60]
+resource_name = "rgbasfd"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:custom_styles/normal:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.00835, 1.99478, 2.99583, 4.01149, 4.96869 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.87451, 0.866667, 0.458824, 1 ), Color( 0.501961, 0.87451, 0.458824, 1 ), Color( 0.458824, 0.486275, 0.87451, 1 ), Color( 0.87451, 0.458824, 0.811765, 1 ), Color( 0.87451, 0.458824, 0.458824, 1 ), Color( 0.87451, 0.698039, 0.458824, 1 ) ]
+}
+
+[sub_resource type="Animation" id=59]
+resource_name = "sfgh"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:custom_styles/normal:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.979125 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.6, 0.6, 0.6, 0 ), Color( 0.913725, 0.94902, 0.447059, 1 ) ]
+}
 
 [node name="Intro" type="Node2D"]
 __meta__ = {
@@ -512,18 +663,22 @@ position = Vector2( 616, 392 )
 shape = SubResource( 17 )
 
 [node name="Actor1" type="KinematicBody2D" parent="."]
-position = Vector2( -133, 484 )
+position = Vector2( -37, 482 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
 }
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Actor1"]
+anims/RESET = SubResource( 50 )
+anims/camiar = SubResource( 51 )
+
 [node name="caminandointro" type="AnimatedSprite" parent="Actor1"]
+visible = false
 position = Vector2( -8, 0 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 9 )
-frame = 3
-playing = true
+frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actor1"]
 show_behind_parent = true
@@ -539,6 +694,11 @@ shape = SubResource( 18 )
 stream = ExtResource( 10 )
 volume_db = 1.0
 
+[node name="Sprite" type="Sprite" parent="Actor1"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 3 )
+hframes = 5
+
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( 499, 501 )
 __meta__ = {
@@ -552,6 +712,7 @@ shape = SubResource( 11 )
 [node name="Trifuerza" type="AnimatedSprite" parent="Area2D"]
 scale = Vector2( 1.40625, 1.6875 )
 frames = SubResource( 16 )
+frame = 3
 playing = true
 
 [node name="Trifuerza2" type="AnimatedSprite" parent="."]
@@ -559,7 +720,7 @@ visible = false
 position = Vector2( 499, 387 )
 scale = Vector2( 1.40625, 1.6875 )
 frames = SubResource( 16 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="Linkintro22" type="AnimatedSprite" parent="."]
@@ -573,7 +734,6 @@ visible = false
 position = Vector2( 495, 477 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 25 )
-frame = 1
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -594,8 +754,8 @@ visible = false
 margin_left = 188.0
 margin_top = 214.0
 margin_right = 838.0
-margin_bottom = 311.0
-rect_pivot_offset = Vector2( 323.446, 42.2975 )
+margin_bottom = 483.0
+rect_pivot_offset = Vector2( 314, 50 )
 custom_fonts/font = SubResource( 28 )
 text = "Blue Label 
 
@@ -629,7 +789,8 @@ volume_db = -21.19
 root_node = NodePath("../Button")
 anims/RESET = SubResource( 40 )
 anims/aparecer = SubResource( 42 )
-anims/rgb = SubResource( 41 )
+anims/rgb = ExtResource( 11 )
+anims/rgdsc = SubResource( 61 )
 
 [node name="muscia" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AudioStreamPlayer")
@@ -649,6 +810,7 @@ valign = 3
 autowrap = true
 
 [node name="Button" type="Button" parent="."]
+visible = false
 margin_left = 395.0
 margin_top = 170.0
 margin_right = 606.0
@@ -658,7 +820,26 @@ custom_styles/hover = SubResource( 47 )
 custom_styles/pressed = SubResource( 48 )
 custom_styles/normal = SubResource( 49 )
 text = "Jugar"
+script = ExtResource( 12 )
+
+[node name="Button3" type="Button" parent="."]
+visible = false
+margin_left = 420.0
+margin_top = 273.0
+margin_right = 576.0
+margin_bottom = 316.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 65 )
+custom_styles/hover = SubResource( 62 )
+custom_styles/pressed = SubResource( 63 )
+custom_styles/normal = SubResource( 64 )
+text = "Salir"
 script = ExtResource( 9 )
+
+[node name="boton 2" type="AnimationPlayer" parent="Button3"]
+anims/RESET = SubResource( 57 )
+anims/rgbasfd = SubResource( 60 )
+anims/sfgh = SubResource( 59 )
 
 [connection signal="area_entered" from="Actor1/Area2D" to="Actor1" method="_on_Area2D_area_entered"]
 [connection signal="animation_finished" from="Linkintro22" to="Actor1" method="_on_Linkintro22_animation_finished"]
@@ -667,3 +848,5 @@ script = ExtResource( 9 )
 [connection signal="animation_finished" from="lkesgo" to="Actor1" method="_on_lkesgo_animation_finished"]
 [connection signal="animation_finished" from="delboton" to="Actor1" method="_on_delboton_animation_finished"]
 [connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]
+[connection signal="pressed" from="Button3" to="Button3" method="_on_Button3_pressed"]
+[connection signal="animation_finished" from="Button3/boton 2" to="Actor1" method="_on_boton_2_animation_finished"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Fondos/cafeteria.jpg" type="Texture" id=1]
 [ext_resource path="res://Escenas/Player.tscn" type="PackedScene" id=2]
@@ -6,12 +6,18 @@
 [ext_resource path="res://Escenas/UI.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Sonidos/Musica/OVERRIDE x Summer and Crossbows  (лето и арбалет) -extended version. (320 kbps).mp3" type="AudioStream" id=5]
 [ext_resource path="res://Escenas/Enemy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Fuentes/KGBlankSpaceSolid.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://Escenas/asdhgvcasgfhr.gd" type="Script" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 417.25, 10 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 10, 119 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
+font_data = ExtResource( 7 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -68,3 +74,14 @@ shape = SubResource( 2 )
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Colision"]
 position = Vector2( 830, 483 )
 shape = SubResource( 2 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 1.0
+margin_top = 18.0
+margin_right = 99.0
+margin_bottom = 50.0
+custom_fonts/font = SubResource( 3 )
+text = "<- Atras"
+script = ExtResource( 8 )
+
+[connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]

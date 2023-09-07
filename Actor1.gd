@@ -2,6 +2,9 @@ extends KinematicBody2D
 
 var speed = 1.8
 
+func _ready():
+	$AnimationPlayer.play("camiar")
+	
 func _physics_process(delta):
 	# Mueve al personaje hacia la derecha
 	move_and_collide(Vector2(1, 0) * speed)
@@ -13,8 +16,8 @@ func _on_Area2D_area_entered(area):
 	$"../Linkintro22".show()
 	$"../AnimationPlayer".play("Disolve")
 	$"../ColorRect".show()
-	
-	
+	$".".hide()
+	$AnimationPlayer.play("RESET")
 func _on_Linkintro22_animation_finished():
 	$"../AnimatedSprite".show()
 	$"../Trifuerza2".show()
@@ -31,14 +34,14 @@ func _on_AnimationPlayer_animation_finished(Disolve):
 func _on_lkesgo_animation_finished(dejar):
 	$"../asdsdfg".play("ayyda")
 	
-func _on_el_del_titulo_animation_finished(anim_name):
+func _on_el_del_titulo_animation_finished(aparicion):
 	$"../Button".show()
 	$"../delboton".play("aparecer")
 	$"../Label".show()
-
+	$"../Button3".show()
+	$"../Button3/boton 2".play("sfgh")
 func _on_delboton_animation_finished(aparecer):
-	$"../delboton".play("rgb")
+	$"../delboton".play("rgdsc")
 
-
-func _on_area_de_los_pasos_area_entered(area):
-	$AudioStreamPlayer.play()
+func _on_boton_2_animation_finished(sfgh):
+	$"../Button3/boton 2".play("rgbasfd")

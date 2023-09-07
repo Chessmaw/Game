@@ -1,0 +1,19 @@
+[gd_resource type="Animation" format=2]
+
+[resource]
+resource_name = "rgb"
+length = 5.0
+loop = true
+step = 1.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:custom_styles/normal:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.255742, 0.60787, 0.926931, 1.19474, 1.44217, 1.69994, 2.04417, 2.32512, 2.55127, 2.84907, 3.16956, 3.33428, 3.67706, 4.07293, 4.4033, 4.62861, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.803922, 1, 0, 1 ), Color( 0, 0.941176, 0.545098, 1 ), Color( 1, 0.560784, 0, 1 ), Color( 0.298039, 0.0980392, 0.847059, 1 ), Color( 0.0117647, 0.952941, 0.862745, 1 ), Color( 0.643137, 0.0941176, 0.815686, 1 ), Color( 1, 0.0117647, 0.0117647, 1 ), Color( 0.0666667, 0.309804, 0.878431, 1 ), Color( 1, 0.498039, 0.0117647, 1 ), Color( 0.133333, 1, 0.0117647, 1 ), Color( 1, 0.0117647, 0.427451, 1 ), Color( 0.792157, 0.0901961, 0.666667, 1 ), Color( 0.113725, 0.262745, 0.854902, 1 ), Color( 0.917647, 0, 0, 1 ), Color( 0.647059, 0.2, 0.772549, 1 ), Color( 1, 0.937255, 0.0117647, 1 ), Color( 1, 0, 0, 1 ) ]
+}

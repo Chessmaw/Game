@@ -1,10 +1,13 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=49 format=2]
 
-[ext_resource path="res://Escenas/Amogus.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Amogus.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Pistolaamogus.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/Escenasdisparar.tres" type="Animation" id=3]
 [ext_resource path="res://Sprites/Escenassacarsela.tres" type="Animation" id=4]
 [ext_resource path="res://Sprites/Amogus spritesheet.png" type="Texture" id=5]
+[ext_resource path="res://Sonidos/SFX/y2mate.com - Pistol Sound Effects 9mm (mp3cut.net).mp3" type="AudioStream" id=6]
+[ext_resource path="res://Sonidos/SFX/y2mate.com - Pistol Sound Effects 9mm (mp3cut.net) (1).mp3" type="AudioStream" id=7]
+[ext_resource path="res://Sprites/bala.png" type="Texture" id=8]
 
 [sub_resource type="Animation" id=42]
 resource_name = "Disparar"
@@ -21,6 +24,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 2, 3 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("disparo:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
 
 [sub_resource type="Animation" id=8]
 length = 0.001
@@ -35,6 +50,30 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 2 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AudioStreamPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("disparo:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=43]
@@ -268,6 +307,10 @@ hframes = 2
 vframes = 2
 frame = 2
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AmogusSpritesheet2/Pistolaamogus"]
+stream = ExtResource( 6 )
+volume_db = -4.37
+
 [node name="animparapsitola" type="AnimationPlayer" parent="AmogusSpritesheet2/Pistolaamogus"]
 method_call_mode = 1
 anims/Disparar = SubResource( 42 )
@@ -281,6 +324,10 @@ tree_root = SubResource( 28 )
 anim_player = NodePath("../animparapsitola")
 active = true
 parameters/playback = SubResource( 29 )
+
+[node name="disparo" type="AudioStreamPlayer" parent="AmogusSpritesheet2/Pistolaamogus"]
+stream = ExtResource( 7 )
+volume_db = -10.843
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AmogusSpritesheet2")
@@ -301,5 +348,10 @@ parameters/playback = SubResource( 24 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.5, 2.75 )
 shape = SubResource( 1 )
+
+[node name="Bala" type="Sprite" parent="."]
+visible = false
+position = Vector2( 25.75, -2.75 )
+texture = ExtResource( 8 )
 
 [connection signal="animation_finished" from="AmogusSpritesheet2/Pistolaamogus/animparapsitola" to="." method="_on_animparapsitola_animation_finished"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Boss Blattle 1.mp3-3bd1a5410f5bf6966707ba286100f339.mp3str"
+
+[deps]
+
+source_file="res://Sonidos/Musica/Boss Blattle 1.mp3"
+dest_files=[ "res://.import/Boss Blattle 1.mp3-3bd1a5410f5bf6966707ba286100f339.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
